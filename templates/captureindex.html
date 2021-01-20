@@ -1,0 +1,55 @@
+{%extends 'base.html'%}
+<html>
+  <head>
+    {%block head%}
+    <title>Live Clicking Picture</title>
+    <style>
+	img {
+  	display: 
+    
+    block;
+  	margin-left: auto;
+  	margin-right: auto;
+	width: 35%
+	}
+    </style>
+    {%endblock%}
+  </head>
+  <body >
+    {%block body%}
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+       <ul>
+          {% for message in messages %}
+          <li<{{ message }}</li>
+          {% endfor %}
+       </ul>
+    {% endif %}
+ {% endwith %}
+ 
+  
+    
+
+<br>    <h1 align="center">Live Video Streaming </h1>
+<h2 align="center">CLICKING PICTURES LOOK IN CAMERA AND ROTATE FACE ANGLES</h2>
+    <!-- Employee:-{{ url_for('static', filename=directory) }} -->
+    <img id="bg" class="center" src="{{ url_for('video_feed2',id=id,name=name) }}">
+    <br>
+    <form action="/buttontoindex" method="POST"> 
+      <table class="table table-hover"  > 
+        <tr>
+          <td>Empid:-</td>
+          <td>{{id}}</td>
+        </tr>
+        <tr>
+          <td>Employee Name:-</td>
+          <td>{{name}}</td>
+        </tr>
+        <tr><td>
+    <button type="submit" value="submit"> Submit </button>
+  </td>
+  </tr>
+    </form>
+    {%endblock%}
+    </body>
+</html>

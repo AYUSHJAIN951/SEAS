@@ -1,0 +1,21 @@
+body{
+    margin:5%;
+    color: brown;
+    background-color:whitesmoke;
+    
+}
+#headerbar {
+    align-self: center;
+    border: 1px;
+    border-color: black;
+} 
+/* table{
+    border: 1px solid black;
+    background-color: #45cacc;
+} */
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  width: 35%
+  }

@@ -1,0 +1,125 @@
+{%extends 'base.html' %}
+<!Doctype html>
+<head>{% block head %}
+  {% endblock %}
+</head>
+        <Body >
+          {% block body %}
+          <!-- <a href="/index"><input type=submit value=Home></a> -->
+        <h1>ADD NEW MEMBER</h1><BR><BR>
+          
+      <!-- <form action="/action2" method="POST"  enctype="multipart/form-data">    
+          <table class="none">    
+      <tr >    
+          <td><b><big><label>Add a Employee : </label></big></b></td>    
+      </tr>    
+       
+        
+      <tr><input type="text" name="name" placeholder="EMPLOYEE NAME" required></tr>    
+      <tr><input type="text" name="epost" placeholder="Enter Post" required></tr>
+       
+      <tr><input type="file" name="empimage"  placeholder="Enter Image"required></tr>    
+      <tr><input type="text" name="bloodgroup" placeholder="Blood Group" /></tr>    
+      <tr><input type="text" name="mobile_no" placeholder="Mobile No" /></tr>    
+      <tr><button type="submit" name="campics" placeholder="Take Pictures to Train"> CAMERA PICS </button></tr>
+      <tr><button type="submit" name="submit" placeholder="Submit"> SUMBIT </button></tr>    
+          
+  </form>     -->
+       
+  <form action="/action2" method="POST"  enctype="multipart/form-data" />    
+  <table class="table table-hover"  >    
+    
+    <thead  style="background-color:  #45cacc; ">    
+<tr >    
+    <td><b><big><label>Add a Employee : </label></big></b></td>    
+</tr>
+</thead>    
+<tbody style="background-color: whitesmoke;">
+<tr>
+  <td><input type="text" name="id" id="id" placeholder="EMPLOYEE ID" required /></td>   </tr> 
+  <tr><td><input type="text" name="name" id="name" placeholder="EMPLOYEE NAME" required /></td>    </tr>
+  <tr><td><input type="text" name="epost" placeholder="Enter Post" required></td>    </tr>
+  <tr><td>
+
+    
+    <div class="input-group mb-3">
+      <div class="custom-file">
+        <input type="file" onchange="readURL(this);" class="custom-file-input" id="inputGroupFile02" name="empimage"  placeholder="Enter Image"required>>
+        <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Choose file </label>
+      </div>
+      <!-- <img id="blah" src="#" alt="Image" /> -->
+      <div class="card">
+        <img id="blah" class="card-body" src="#" alt="">
+        
+          <!-- <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
+          
+        
+      </div>
+      
+    </div>
+  
+  </td></tr>
+  <tr><td><input type="text" name="bloodgroup" placeholder="Blood Group" /></td>    </tr>
+  <tr><td><input type="text" name="mobile_no" placeholder="Mobile No" /></td>    </tr>
+  <tr><td><button type="submit" value="submit" placeholder="Submit">Submit  </button></td> </tr>    
+</tbody>
+</form> 
+
+
+<!-- <input type="submit" name="submit_button" value="Do Something"> -->
+<!-- <input type="submit" name="submit_button" value="Do Something Else"> -->
+
+
+
+
+  </table>  
+  
+
+
+  <script>
+    function readURL(input) {
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#blah')
+                .attr('src', e.target.result)
+                .width(150)
+                .height(200);
+      };
+
+      reader.readAsDataURL(input.files[0]);
+  }
+}
+    </script>
+  
+  {% endblock %}
+  
+</Body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- <form method="POST" action="/create" enctype="multipart/form-data">
+          EMPLOYEE ID: <input type="text" name="empid">
+          
+          <BR><BR> BLOOD GROUP: <input type="text" name="bloodgroup">
+          <BR><BR> EMPLOYEE IMAGE: <input type="file" name="emp_image">
+          <BR><BR>  <input type="submit">
+        
+        </form> -->
+        </body>
+        </html>

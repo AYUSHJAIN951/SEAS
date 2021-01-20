@@ -1,0 +1,54 @@
+{% extends 'base.html'%}
+<html>    
+    <head>    {% block head %}
+        <title>{{t}}</title>    
+        <!-- <link rel="stylesheet" type="text/css"  href="{{ url_for('static',filename='assets/style.css')}}" >     -->
+        {% endblock %}
+    </head>    
+    <body style="background-color:hsl(195, 48%, 56%);">   
+        {% block body %} 
+    <h1>{{h}}</h1>    
+    <hr>    
+        {% if atodos[0] %}    
+    <h3>Result of the Search</h3>    
+    <table class="table table-hover"  >    
+    
+        <thead  style="background-color:  #45cacc; ">    
+        <tr id="row">    
+             
+            <td class="Empid">Empid</td>    
+            <td class="name">Name</td>    
+            <td class="date_time">Date & Time</td>    
+            <td class="Temperature">Temperature</td>    
+        <td class="func">Delete</td>    
+        <td class="func">Modify</td>    
+        </tr>    </thead>
+        {% for todo in atodos %}   
+        <tbody  style="background-color:  whitesmoke; ">
+          
+        <tr class="datas">    
+            
+            <td class="Empid"><a href="http://127.0.0.1:5000/profile/{{ todo["Empid"] }}">{{ todo["Empid"] }}</a></td>    
+            <td class="name">{{ todo["name"] }}</td>    
+            <td class="date_time">{{ todo["date_time"] }}</td>    
+            <td class="Temperature">{{ todo["Temperature"] }}</td>    
+            <td class="func1"><a href="./remove?_id={{ todo['_id'] }}"><button type="submit">DELETE</button></a></td>    
+            <td class="func1"><a href="./update?_id={{ todo['_id'] }}"><button type="submit">EDIT</button></a></td>    
+        </tr>    </tbody>
+        {% endfor %}    
+    {% else %}    
+        <h4>No Result Found !!</h4>    
+    {% endif %}    
+    </table>    
+     
+    <form action="/download_log_attendance_search/{{refer}}/{{key}}", methods="POST">
+        <!-- <input type="text" name="nametodownload" placeholder="Enter Employee name to Download record"> -->
+        <!-- <input type="button" ><a href="http://127.0.0.1:5000/download_log">Export CSV</a> -->
+        <a href="http://127.0.0.1:5000/download_log_attendance_search/{{refer}}/{{key}}"><input type="button" value="Export CSV" key="key"></a>
+    </form>
+
+
+
+   {% endblock %}  
+</body>    
+</html>  

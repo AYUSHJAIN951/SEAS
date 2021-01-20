@@ -1,0 +1,43 @@
+<html>    
+   <head>    
+            <title></title>    
+        </head>    
+        <style>       
+            h1{    
+                font-family:"Arial Black", Gadget, sans-serif;    
+            }    
+            body{    
+                background-color:white;    
+            }    
+        </style>    
+    <body style="background-color:hsl(195, 48%, 56%);">    
+        <h1></h1>    
+        <hr>    
+        <h3>Update Employee Details</h3>    
+        <form action="/action3" method="POST">    
+        {% for task in tasks %}    
+            Unique Object ID : {{ emp['_id'] }}<br/>    
+        <input type="text" name="_id" value="{{ task['_id'] }}" hidden>    
+        
+        <table>    
+        <tr>    
+        <td>EMPLOYEE Name</td><td> : </td><td><input type="text" name="name" value="{{ emp['name'] }}" placeholder="{{ emp['name'] }}"></td>    
+        </tr>    
+        <tr>    
+        <td>EMPLOYEE POST</td><td> : </td><td><input type="text" name="epost"  value="{{ emp['epost'] }}" placeholder="{{ emp['epost'] }}"> </td>    
+        </tr>    
+        <tr>    
+        <td>Blood Group</td><td> : </td><td><input type="text" name="bloodgroup" value="{{ emp['bloodgroup'] }}" placeholder="{{ emp['bloodgroup'] }}"></td>    
+        </tr>    
+        <tr>    
+        <td>Mobile No.</td><td> : </td><td><input type="text" name="mobile_no" value="{{ emp['mobile_no'] }}" placeholder="{{ emp['mobile_no'] }}"></td>    
+        </tr>    
+        </table>    
+        
+            <button type="submit">submit </button>  
+            <br/>    
+        </form>    
+        <a href="/">Return to Home Page </a>  
+        {% endfor %}      
+</body>    
+</html>   

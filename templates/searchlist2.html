@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+<html>    
+    <head>    
+        {%block head%}
+
+        <title>{{t}}</title>   
+        {%endblock%} 
+        
+    </head>    
+<body>    
+    {% block body %}
+    <h1>{{h}}</h1>    
+    <hr>    
+        {% if atodos[0] %}    
+    <h3>Result of the Search</h3>    
+    <table class="table table-hover"  >    
+    
+        <thead  style="background-color:  #45cacc; ">      
+        <tr id="row">    
+            <td class="id">ID</td>
+           <td class="name">Name</td>    
+            <td class="date">Date</td>    
+            <td class="temperature">Temperature</td>    
+            <td class="uv">UV</td>    
+                
+        <td class="func">Delete</td>    
+        <td class="func">Modify</td>    
+        </tr>    </thead>
+        <tbody  style="background-color:  whitesmoke; ">
+         
+        {% for todo in atodos %}    
+        <tr class="datas">    
+            
+            <td class="name">{{ todo["name"] }}</td>    
+            <td class="date">{{ todo["date_time"] }}</td>    
+            <td class="temp">{{ todo["temperature"] }}</td>    
+            <td class="uv">{{ todo["uv"] }}</td>    
+            <td class="func1"><a href="./remove?_id={{ todo['_id'] }}"><button type="submit">DELETE</button></a></td>    
+            <td class="func1"><a href="./update?_id={{ todo['_id'] }}"><button type="submit">EDIT</button></a></td>    
+        </tr>    
+        {% endfor %}    
+    {% else %}    
+        <h4>No Result Found !!</h4>    
+    {% endif %} 
+    </tbody>   
+    </table>    
+       
+   {%endblock%} 
+</body>    
+</html>  

@@ -1,0 +1,10 @@
+{%extends 'base.html'%}
+<body >
+    {%block body%}
+    <img src="{{url_for('file', filename=user['empimage'] )}}" alt="EMPLOYEE IMAGE" width="100" height="400" > 
+  <B><BR>  <BR><BR> EMPID : {{_id}} <BR> <BR> 
+    NAME  : {{user['name']}}<BR><BR> 
+    EMPLOYEE POST : {{user['epost']}}<BR><BR> 
+    MOBILE No. :{{user['mobile_no']}}<BR><BR> 
+    BLOOD GROUP :{{user['bloodgroup']}}<BR><BR> 
+{%endblock%}

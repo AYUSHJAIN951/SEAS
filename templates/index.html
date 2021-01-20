@@ -1,0 +1,35 @@
+{%extends 'base.html' %}
+{% block head %}
+
+<h1><b>SEAS</b></h1>
+
+{% endblock %}
+
+{% block body %}
+
+
+
+<h1 align="center">Live Video Streaming</h1>
+<table border="1" style="padding: 0px ;">
+    <tr>
+        <td>
+            <img id="bg" class="center" src="{{ url_for('video_feed') }}">
+        </td>
+        <td>
+            <img id="bg" class="center" src="{{ url_for('video_feed3') }}">
+        </td>
+    </tr>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
